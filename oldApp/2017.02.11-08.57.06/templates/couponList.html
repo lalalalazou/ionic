@@ -1,0 +1,37 @@
+  <ion-view view-title="我的卡券">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+	<ion-content class="">
+		<nav class="classfy row text-center bg-write">
+	      <a class="col" ng-repeat="i in coupon_invalid" ng-class="{true: 'active', false: ''}[i.op_value == classfy]" ng-click="::change(i.op_value)" ng-bind="::i.op_name"></a>
+	      
+	  </nav>
+		<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		<div class="padding ">
+			<div ng-if="status" class="list couponList row" ng-repeat="c in coupons">
+			    <a class="item item-thumbnail-left col-75" href="#/tab/pContent/{{c.pid}}">
+			     	<img ng-src='{{::imgUrl+c.img}}' err-src="img/empty.png"/>
+			      <h2 ng-bind="::c.name"></h2>
+			      <p ng-if="::c.type=='2'"><i class="icon ion-android-pin"></i> <span ng-bind="::c.shopName"></span> : <span ng-bind="::c.sit"></span></p>
+			       <p ng-if="::c.type=='1'">总部快递发货</p>
+			      <small><span ng-bind="::c.vct"></span> 至 <span ng-bind="::c.vet"></span></small>
+			    </a>
+			    <div class="couponListBtn col-25">
+			    	 <p class="price">￥<span ng-bind="::c.price"></span></p>
+				     <a class="button button-small button-balanced" href="#/tab/getGoods/1/{{c.id}}/{{c.pid}}" ng-if="::classfy=='0' && c.type=='1'">立即提货</a>
+				     <a class="button button-small button-balanced" href="#/tab/orderContent/{{c.orderId}}" ng-if="::classfy>0 && c.type=='1'">查看订单</a>
+				     <a class="button button-small button-assertive" href="#/tab/couponCode/{{c.id}}" ng-if="::c.type=='2'">查看卡密</a>
+			    </div>
+			</div>
+			<div ng-if="!status" class="warm">
+				<img src="img/empty.png">
+				<p>没有卡券</p>
+			</div>
+		</div>
+		<ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

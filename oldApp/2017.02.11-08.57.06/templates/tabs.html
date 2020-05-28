@@ -1,0 +1,17 @@
+<ion-tabs class="tabs-icon-top tabs_my_icon" ng-controller="footMyCtrl">
+		<ion-tab title="首页" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" href="#/tab/home" ng-click="tiaozhuan('tab.home')">
+			<ion-nav-view name="home"></ion-nav-view>
+		</ion-tab>
+		<ion-tab title="分类" icon-on="ion-android-menu" icon-off="ion-navicon" href="#/tab/classfy" ng-click="tiaozhuan('tab.classfy')">
+			<ion-nav-view name="goods"></ion-nav-view>
+		</ion-tab> 
+		<ion-tab title="活动中心" class="tab_active" icon-on="activity" icon-off="#/tab/activeActivity" href="activityIndex" ng-click="tiaozhuan('tab.activityIndex')">
+			<ion-nav-view name="activity"></ion-nav-view>
+		</ion-tab> 
+		<ion-tab title="购物车" icon-on="ion-ios-cart" icon-off="ion-ios-cart-outline" href="#/tab/mycart" ng-click="tiaozhuan('tab.mycart')">
+			<ion-nav-view name="carts"></ion-nav-view>
+		</ion-tab>
+		<ion-tab title="我的" icon-on="ion-ios-person" icon-off="ion-ios-person-outline" href="#/tab/userIndex" ng-click="tiaozhuan('tab.userIndex')">
+			<ion-nav-view name="user"></ion-nav-view>
+		</ion-tab> 
+</ion-tabs>

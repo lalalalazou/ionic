@@ -1,0 +1,84 @@
+ <ion-view view-title="捐助详情">
+ 	
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class=""  delegate-handle="start">
+        	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		 <div class="list lanren">
+		 	 <div ng-if="l.status==0" class="ribbon-lanren"><div class="ribbon ribbon_green">未开始</div></div>
+     	 	<div ng-if="l.status==1" class="ribbon-lanren"><div class="ribbon">进行中</div></div>
+      		<div ng-if="l.status==2" class="ribbon-lanren"><div class="ribbon ribbon_gray">已结束</div></div>
+		 	<div class="item item-image">
+		 		<img ng-src="{{::imgUrl+l.banner}}" err-src="img/empty.png"/>
+		 		 <div class="item-image-title"  ng-bind="::l.name"></div>
+		 	</div>
+      		<div class="item">
+	      			<div class="listprogress">
+	      			<progress value="{{l.already_charitable}}" max="{{l.all_limit}}"><ie style="width:{{l.already_charitable/l.all_limit | number: 2}}%;"></ie></progress>
+	      			<div class="progress_text">进度：<span ng-bind="(l.already_charitable/l.all_limit)*100  | number: 2"></span>%</div>
+	      		</div>
+      		</div>
+      		<div class="item row">
+	      		<div class="col-33 text-center">
+	      			<p><big><b class="text_red" ng-bind="l.already_charitable"></b></big></p>
+	      			<p><small>用户捐款（积分）</small></p>
+	      		</div>
+	      		<div class="col-33 text-center">
+	      			<p><big><b class="text_red" ng-bind="::l.all_limit"></b></big></p>
+	      			<p><small>目标(积分)</small></p>
+	      			
+	      		</div>
+	      		<div class="col-33 text-center">
+	      			<p><big><b class="text_red" ng-bind="l.already_charitable_num"></b></big></p>
+	      			<p><small>爱心（份）</small></p>
+	      		</div>
+      		</div>
+	      	<div ng-if="l.limit_type=='2'" class="item "><i class="icon ion-ionic"></i> 截止日期：<span class="item-note" ng-bind="::l.timeLimit"></span></div>
+	      	<div ng-if="l.data_limit>0" class="item "><i class="icon ion-ionic"></i> 日限额：<span class="item-note" ng-bind="::l.data_limit+' 积分'"></span></div>
+	      	 
+		 </div>
+		<div class="list" ng-if="l.status=='1'">
+			 <div class="item item-divider">一份捐款，一份爱心。<span class="item-note"> <i class="icon ion-heart"></i></span></div>
+		  <label class="item item-input">
+		    <span class="input-label">捐赠积分</span>
+		    <input type="number" ng-model="user.jfjz" myfocus="isOpen" value="" placeholder="您有{{jf}}分，最多可捐{{l.maxjf}}分">
+		    <span class="item-note" style="padding-right: 1em;" >积分</span>
+		  </label>
+		  
+		  <button class="button button-block button-assertive" ng-click="juanzeng(user)">立即捐赠</button>
+		  
+		</div>
+      <div class="list charitableContent">
+		<nav class="classfy row text-center bg-write" style="margin-bottom: -1px;">
+		    <a class="col text-center" ng-click="changeClass(true)" ng-class="{true: 'active', false: ''}[classfy]"><i class="icon ion-navicon"></i> 项目详情</a>
+		    <a class="col text-center" ng-click="changeClass(false)" ng-class="{true: 'active', false: ''}[!classfy]"><i class="icon ion-ios-heart-outline"></i> 捐赠记录</a>
+		</nav>
+		  <div class="item item-body" ng-if="classfy">
+		    <div ng-bind-html="::l.content"></div>
+		    <p>
+		      <span class="subdued ion-ios-clock-outline" ng-bind="' '+l.c_time"> </span>
+		    </p>
+		  </div>
+		  <div ng-if="!classfy && users.length>0">
+		      <p class="item" ng-repeat="u in users">
+			   感谢会员<span ng-bind="::u.uid"></span>捐赠了<span ng-bind="::u.charitable_price"></span>积分
+			    <span class="item-note" ng-bind="::u.c_time"></span>
+			  </p>
+		  </div>
+		  <div ng-if="!classfy && users.length<=0">
+		     <div class="warm">
+				<img src="img/empty.png">
+				<p>还没有爱心行动，马上献出第一份爱心吧！</p>
+			</div>
+		  </div>
+		  
+      	
+      </div>
+      
+		<ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>  
+       </ion-content>
+      </ion-view>

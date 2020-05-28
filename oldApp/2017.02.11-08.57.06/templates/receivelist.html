@@ -1,0 +1,40 @@
+  <ion-view view-title="管理收货地址">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+	 <ion-nav-buttons side="right">
+      <button class="button button-clear icon ion-ios-arrow-backb ion-ios-trash-outline" ng-click="showHide()"></button>
+   </ion-nav-buttons>
+	
+    <ion-content >
+    	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+       <div class="modal-top-1">
+
+
+      <ion-list ng-show="status"  show-delete="data.showDelete" >
+			  <ion-item ng-repeat="a in addesses" class="itemfl">
+			
+			   <h2  ng-click="selectsit(a.id)"><span ng-bind="a.name+' '+a.tel"></span></h2>
+			   <p  ng-click="selectsit(a.id)" ng-bind="a.provincename+a.cityname+a.areaname+a.address"></p>
+			   
+				 <span class="button button-large button-light icon icon-right item-note btnCart"  ng-click="editSit(a)"> <i class="icon ion-compose"></i> </span>
+					
+			    <ion-delete-button class="ion-minus-circled"
+			                       ng-click="deleSit(a)">
+			    </ion-delete-button>
+			
+			  </ion-item>
+			</ion-list>
+		</div>
+		<div ng-hide="status" class="warm">
+		<img src="img/empty.png">
+		<p>你还没有增加收货地址</p>
+	</div>
+	</ion-content>
+	<ion-footer-bar align-title="center" class="bar-assertive" ng-click="tiaozhuan()">
+		<h1 class="title">增加收货地址</h1>
+	</ion-footer-bar>
+</ion-view>

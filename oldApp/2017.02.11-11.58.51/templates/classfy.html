@@ -1,0 +1,28 @@
+<ion-view view-title="产品分类"  hide-nav-bar=true >
+	<ion-header-bar class="bar  bar-header item-input-inset nav_red">
+		<headmenu class="row"></headmenu>
+	</ion-header-bar>
+	<ion-content class="">
+    <ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		<ul id="myTab" class="" >
+			<li ng-repeat='c in classfy' ng-click="show(c.classid)"  class="nav" id="nav{{c.classid}}"   ng-class="{true: 'active', false: ''}[classfyid==c.classid]">
+				<span ng-bind="::c.classname"></span>
+			</li>
+		</ul>
+		<div  ng-if="::status" id="myTabContent">
+					<div class="ng-scope" ng-repeat='l in productInfo'>
+						<a href="#/tab/productList/{{l.classid}}/classfy">
+							<img class='img-responsive'  err-src="img/empty.png" ng-src='{{::imgUrl+l.classfy_img }}' >
+							<p><span ng-bind="::l.classname"></span></p>
+						</a>
+					</div>
+		</div>
+		<div ng-if="!status" class="warm">
+		<img src="img/empty.png">
+		<p>暂无产品分类</p>
+		</div>
+	</ion-content>
+</ion-view>

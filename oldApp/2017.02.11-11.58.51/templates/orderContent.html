@@ -1,0 +1,53 @@
+ <ion-view view-title="订单列表">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+       <ion-content class="">
+      	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		<div ng-if="ostatus" class="list orderContent">
+			<header class="item item-divider">
+				<img ng-src="{{::imgUrl+orderlist.shopImg}}" err-src="img/error_user.png" class="shopImg" />
+				<span ng-bind="::orderlist.shopName"></span>
+			</header>
+			<a ng-repeat="order in orderlist.list" class="item item-thumbnail-left" href="#/tab/pContent/{{order.itemId}}">
+		      <img ng-if="::order.img" ng-src="{{::imgUrl+order.img}}" err-src="img/empty.png" class="max100img" />
+		      <h2 ng-bind="::order.title"></h2>
+		      <p ng-bind="::order.colorName"></p>
+		      <span class="item-note">
+		      	积分<span ng-bind="::order.price"></span><br/>× <span ng-bind="::order.quantity"></span>
+		      </span>
+		 	</a>				
+			<div class="item">
+				<span class="item-note">合计：<b class="c_pink" ng-bind="::orderlist.good_sumjf"></b>分</span>
+			</div>
+			<div class="item item-divider">收获地址</div>
+			<div class="item" ng-bind="::orderlist.address"></div>
+			<div class="item item-divider">订单信息</div>
+			<div class="item">订单号码：<span class="item-note" ng-bind="::orderlist.orderId"></span></div>
+			<div class="item" ng-if="::orderlist.status>'1'">支付时间：<span class="item-note" ng-bind="orderlist.support_time"></span></div>
+			<div class="item">订单状态：<span class="item-note text_red" ng-bind="orderlist.statusName"></span></div>
+			<div class="item">支付方式：<span class="item-note" ng-bind="::orderlist.supportmethoName"></span></div>
+			<a class="item" ng-if="::orderlist.supportmetho=='3'" href="#/tab/activityIndianaContent/{{orderlist.myurl}}">夺宝期号：
+				<span class="item-note" ng-bind="::'第'+orderlist.transid+'期'"></span>
+			</a>
+			<div class="item" ng-if="::orderlist.supportmetho=='2'">卡券密码：
+				<span class="item-note" ng-bind="::orderlist.transid"></span>
+			</div>
+			<div class="item" ng-if="::orderlist.supportmetho=='1'">支付积分：
+				<span class="item-note" ng-bind="::orderlist.good_sumjf">分</span>
+			</div>
+			<div class="item item-divider">客服备注</div>
+			<div class="item" ng-if="::orderlist.beizhu" ng-bind="::orderlist.beizhu"></div>
+				<a ng-if="orderlist.status=='1'" href="#/tab/pay/ordersub/{{orderlist.orderId}}" class="button button-full button-assertive">立即付款</a>
+				<a ng-if="orderlist.status=='1'" ng-click="::deleteOrder(orderlist.orderId)" class="button button-full  button-stable">关闭订单</a>
+				<a ng-if="orderlist.status=='3'" ng-click="::receiveOrder(orderlist.orderId)" class="button button-full button-assertive">立即收货</a>
+		</div>
+		<div ng-if="!ostatus" class="warm">
+			<img src="img/empty.png">
+			<p>订单错误</p>
+		</div>
+        </ion-content>
+      </ion-view>

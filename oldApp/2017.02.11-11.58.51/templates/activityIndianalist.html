@@ -1,0 +1,52 @@
+ <ion-view view-title="积分夺宝">
+ 	
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class="">
+        	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+      <div class="list card lanren" ng-repeat="l in list">
+      	<a class="item item-icon-left " href="#/tab/activityIndianaContent/{{l.id}}">
+	    <i class="icon ion-android-calendar"></i>
+	   第<span ng-bind="l.code"></span>期
+	  </a>
+      	<div ng-if="l.status==0" class="ribbon-lanren"><div class="ribbon ribbon_green">未开始</div></div>
+      	<div ng-if="l.status==1" class="ribbon-lanren"><div class="ribbon">进行中</div></div>
+      	<div ng-if="l.status==2 || l.status==3" class="ribbon-lanren"><div class="ribbon ribbon_gray">已结束</div></div>
+      	 <a class="item item-image" href="#/tab/activityIndianaContent/{{l.id}}" ><img ng-src="{{imgUrl+l.banner}}" err-src="img/empty.png"/></a>
+      	   <a class="item item-thumbnail-left" href="#/tab/activityIndianaContent/{{l.id}}"  >
+	       <img ng-src="{{imgUrl+l.cover_img}}" err-src="img/empty.png"/>
+	      <h2><span ng-bind="l.pname"></span></h2>
+	      <div class="row">
+	      	<div class="col-50 ">
+	      		<p>
+	      			<big><big class="text_red" ng-bind="l.price"></big></big><small>分</small>
+	      			<!--<del ng-bind="l.pprice">元</del>-->
+	      			<small class="text_gray"><del ng-bind="l.pintegral"></del>分</small>
+	      		</p>
+	      		<div class="listprogress">
+	      			<progress value="{{l.number_now}}" max="{{l.number_limit}}"><ie style="width:{{l.number_now/l.number_limit | number: 2}}%;"></ie></progress>
+	      			<div class="progress_text"><span ng-bind="(l.number_now/l.number_limit)*100  | number: 2"></span>%</div>
+	      		</div>
+	      	</div>
+	      	<div class="col-50 text-right">
+	      			<p><small>已抢<span class="text_red" ng-bind="l.number_now"></span>件</small></p>
+	      			<button ng-if="l.status==0" class="button button-small button-balanced ion-ios-clock-outline"> 等待中</button>
+	      			<button ng-if="l.status==1" class="button button-small icon-right button-assertive ion-ios-arrow-right">立即抢 </button>
+	      			<button ng-if="l.status==2 || l.status==3" class="button button-small button-stable ion-ios-ionic-outline"> 已结束</button>
+	      			
+	      	</div>
+	      </div>
+	    </a>
+      </div>
+      
+        <div ng-hide="status" class="warm">
+				<img src="img/empty.png">
+				<p>没有活动哦～</p>
+			</div>
+      	<ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>  
+        </ion-content>
+      </ion-view>

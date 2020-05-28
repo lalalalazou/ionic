@@ -1,0 +1,50 @@
+  <ion-view view-title="编辑收货地址">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+    <ion-content class="">
+    	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		<form action="#" method="post" name="f" >
+			<div class="list modal-top-1">
+				<label class="item item-input">
+					<span class="input-label">收货人</span>
+					<input type="text" required  name="name" ng-model="user.name" id="name" placeholder="" value="">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">联系电话</span>
+					<input type="number" required ng-model="user.tel" id="tel" name="tel" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" value="" placeholder="">
+				</label>
+				
+				<label  class="item item-input item-select">
+					<span class="input-label">省</span>
+					<select ng-required="true" name="province" id="province" autocomplete="off" ng-model="user.pro"  ng-selected='user.pro' ng-change="getsit('city',user.pro)" ng-options="p.provinceID as p.province for (x, p) in provinces">
+						<option value="">选择省</option>
+					</select>
+				</label >
+				<label  class="item item-input item-select">
+					<span class="input-label">市</span>
+					<select ng-required="true" name="city" id="city" autocomplete="off" ng-model='user.cit' ng-selected='user.cit'  ng-change="getsit('area',user.cit)" ng-options="c.cityID as c.city for (x, c) in citys">
+						<option value="">选择市</option>
+					</select>
+				</label >
+				<label class="item item-input item-select">
+					<span class="input-label">区</span>
+					<select ng-required="true" name="marea" id="marea" autocomplete="off" ng-model='user.are' ng-selected='user.are' ng-options="a.areaID as a.area for (x, a) in areas">
+						<option value="">选择区</option>
+					</select>
+				</label >
+				<label class="item item-input">
+					<span class="input-label">地址</span>
+					<input required type="text" name="address" id="address" ng-model='user.address' class="address" placeholder="" value="">
+				</label>
+				<ion-toggle ng-model="user.checked">
+					 默认地址
+					</ion-toggle>
+			</div>
+			 <button type="button" name="sub" class="button  expand button-assertive button-full borderradius" ng-click="check(user)" ng-disabled="f.$invalid" >保存</button>
+		</form>
+        </ion-content>
+      </ion-view>

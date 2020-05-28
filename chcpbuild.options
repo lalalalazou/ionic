@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "config-file": "http://zelar.yhbz.net/xd/chcp/dev/chcp.json"
+  },
+  "production": {
+    "config-file": "http://zelar.yhbz.net/xd/chcp/production/chcp.json"
+  },
+  "QA": {
+    "config-file": "http://zelar.yhbz.net/xd/chcp/QA/chcp.json"
+  }
+}

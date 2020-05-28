@@ -1,0 +1,40 @@
+  <ion-view view-title="夺宝记录">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+	<ion-content class="">
+		<nav class="classfy row text-center bg-write">
+	      <a class="col" ng-repeat="i in indianaIsWinning" ng-class="{true: 'active', false: ''}[i.op_value == classfy]" ng-click="::change(i.op_value)" ng-bind="::i.op_name"></a>
+	      
+	  </nav>
+		<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+			<div ng-if="status">
+		  	<div class="list"  ng-repeat="u in myLlist" ng-click="::tiaozhuan(u.inid)">
+		  		<h2 class="item">第<span ng-bind="::u.activity_indiana_code"></span>期：<span ng-bind="::u.pName"></span></h2>
+			  	<div class="item item item-avatar item-button-right" >
+			      <img ng-src="{{::imgUrl+u.listImg}}" err-src="img/empty.png"/>
+			      <h2  class="">
+			      	<small class="tag" ng-class="::{'0': 'tag_green', '1': 'tag','2': 'tag_gray'}[u.isWinning]" ng-bind="::u.isWinningName" ></small>
+			      	号码：<span class="" ng-bind="::u.code"></span>
+			      </h2>
+			      <p>
+			      	<small>
+			      		<i class="icon ion-clock"></i> <span ng-bind="::u.cTime"></span>购买 / 
+			      		<i class="icon" ng-class="::{true: 'ion-ios-calendar-outline', false: 'ion-ios-person-outline'}[u.isWinning>0]"></i> 
+			      		<span ng-bind="::{true: u.win_time+'开奖', false: '共'+u.number_now+'/'+u.number_limit+'人参与'}[u.isWinning>0]"></span>
+			      	</small>
+			     </p>
+			       <a ng-if="u.isWinning==1" class="item-note button button-positive" href="#/tab/getGoods/2/{{u.id}}/{{u.pid}}">立即领奖</a>
+			   </div>
+		  	</div>
+		  </div>
+			<div ng-if="!status" class="warm">
+				<img src="img/empty.png">
+				<p>没有记录哦～</p>
+			</div>
+		<ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

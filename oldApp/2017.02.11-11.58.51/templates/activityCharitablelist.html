@@ -1,0 +1,40 @@
+ <ion-view view-title="爱心捐助">
+ 	
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class="">
+        	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+      <div class="list card lanren" ng-repeat="l in list">
+      	 <a href="#/tab/activityCharitableContent/{{l.id}}" class="item item-image"><img ng-src="{{imgUrl+l.banner}}" err-src="img/empty.png"/><a>
+      	<div ng-if="l.status==0" class="ribbon-lanren"><div class="ribbon ribbon_green">未开始</div></div>
+      	<div ng-if="l.status==1" class="ribbon-lanren"><div class="ribbon">进行中</div></div>
+      	<div ng-if="l.status==2" class="ribbon-lanren"><div class="ribbon ribbon_gray">已结束</div></div>
+      	   <a class="item item-thumbnail-left" href="#/tab/activityCharitableContent/{{l.id}}"  >
+	       <img ng-src="{{imgUrl+l.listImg}}" err-src="img/empty.png"/>
+	      <h2><span ng-bind="l.name"></span></h2>
+	      <p><small ng-bind-html="l.limitContent"></small></p>
+	      <div class="row">
+	      	<div class="col-50 ">
+	      		<div class="listprogress">
+	      			<div class="listprogress">
+	      			<progress value="{{l.already_charitable}}" max="{{l.all_limit}}"><ie style="width:{{l.already_charitable/l.all_limit | number: 2}}%;"></ie></progress>
+	      			<div class="progress_text"><span ng-bind="(l.already_charitable/l.all_limit)*100  | number: 2"></span>%</div>
+	      		</div>
+	      		</div>
+	      	</div>
+	      	<div class="col-50 text-center"><small>目标：<b class="text_red" ng-bind="l.all_limit"></b>分</small></div>
+	      </div>
+	    </a>
+      </div>
+      
+        <div ng-hide="status" class="warm">
+				<img src="img/empty.png">
+				<p>没有活动哦～</p>
+			</div>
+      	<ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>  
+        </ion-content>
+      </ion-view>

@@ -1,0 +1,66 @@
+<ion-view view-title="兴动账户登录">
+	<!-- hide-back-button="true"-->
+	<!-- <ion-nav-buttons side="right">
+     <button class="button button-small button-clear" ng-click="doSomething()">
+       帮助123 
+     </button>
+    </ion-nav-buttons>-->
+	<ion-content class="" overflow-scroll="false">
+		<div class="login edit_userinfo">
+			<form action="" method="post" name="f">
+				<div class="warm" ng-if="logWarm" ng-bind="logWarm"></div>
+				<label class="item item-input item-select">
+			    <div class="input-label">服务器类型</div>
+			    <select ng-model="user.type" ng-options="value.id  as value.name for value in gameServiceType">
+		          <option value="">请选择</option>
+			    </select>
+			 </label>
+
+				<label class="item item-input item-select">
+			    <div class="input-label">服务器所在省</div>
+			    <select 
+		          ng-model="user.pro" 
+		          ng-options="value.id  as value.name for value in pros | filter:{ type : user.type }">
+		          <option value="">请选择</option>
+			    </select>
+			 </label>
+
+				<label class="item item-input item-select">
+			    <div class="input-label">服务器</div>
+			     <select 
+		          ng-model="user.service" 
+		          ng-options="value.servicer  as value.cityName for value in gameService | filter:{ type : user.type ,province : user.pro}">
+		          <option value="">请选择</option>
+			    </select>
+			 </label>
+				<label class="item item-input">
+			    <span class="input-label">账号</span>
+			   <input required type="text" ng-model="user.username" ng-change="checkErrorTimes(user)" placeholder="请输入{{usernamePlaceholders[user.type]}}"/>
+			  </label>
+				<div class="itemRight mypassword">
+					<label class="item item-input" ng-show="isShow">
+					   <span class="input-label">密码</span>
+					   <input required type="password"  ng-model="user.pass" ng-change="checkErrorTimes(user)" placeholder="请输入密码"/>
+					</label>
+					<label class="item item-input" ng-hide="isShow">
+					   <span class="input-label">密码</span>
+					   <input required type="text"  ng-model="user.pass" ng-change="checkErrorTimes(user)" placeholder="请输入密码"/>
+					</label>
+					<div ng-click="changeShow(isShow)"><i class="icon " ng-class="{true:'ion-eye-disabled',false:'ion-eye'}[isShow]"></i></div>
+				</div>
+				<div class="itemRight codeImg" ng-if="errorTimes>=3">
+					<label class="item item-input"><!---->
+					    <span class="input-label">验证</span>
+					  	<input required type="text" name="username" ng-model="user.imgCode"  class="username col col-25 col-center " value="" placeholder="验证码"/>
+					</label>
+					<div><img ng-src="{{codeImg}}" ng-click="getCodeImg()"></div>
+				</div>
+				<ion-toggle ng-model="pushNotification.checked" ng-change="pushNotificationChange()">
+					记住密码
+				</ion-toggle>
+				<div><button type="button" name="sub" class="button  expand button-assertive button-full borderradius" ng-click="check(user)"
+						ng-disabled="f.$invalid">提交</button></div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,30 @@
+ <ion-view view-title="产品列表">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class="">
+    <ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+         <div id="myTabContent" ng-if="products.length>0" >
+			<ul id="productlist" class="tab-pane" >
+				<li ng-repeat='c in products' class='col-xs-6 ng-scope'>
+					<a href='#/tab/pContent/{{c.id}}'>
+						<img class='img-responsive' ng-src='{{::imgUrl+c.cover_img }}' err-src="img/empty.png">
+						<p class="text-left">
+							<span ng-bind="::c.name"></span>
+							<br/>
+							<span>积分：<b class="price" ng-bind="::c.integral"></b></span>
+						</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div ng-if="products.length<=0" class="warm">
+			<img src="img/empty.png">
+			<p>暂无产品</p>
+		</div>
+		<ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>  
+        </ion-content>
+      </ion-view>

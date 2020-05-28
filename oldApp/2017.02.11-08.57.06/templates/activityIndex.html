@@ -1,0 +1,18 @@
+ <ion-view view-title="活动中心">
+        <ion-content class="">
+        	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+      <div class="list card" ng-repeat="banner in banners">
+      	<a class="item item-image" href="#/tab/{{banner.url}}">
+      		 <img ng-src="{{imgUrl+banner.img}}" err-src="img/empty.png"/>
+      	</a>
+      
+      </div>
+        <div ng-hide="banners" class="warm">
+				<img src="img/empty.png">
+				<p>没有活动哦～</p>
+			</div>
+        </ion-content>
+      </ion-view>

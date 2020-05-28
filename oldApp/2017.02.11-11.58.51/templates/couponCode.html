@@ -1,0 +1,34 @@
+ <ion-view view-title="卡密信息">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+	<div class="padding ">
+			<div ng-if="status" class="couponContent">
+				<header class="row">
+					<div class="col-67">
+				      <h2>门店：<span ng-bind="::c.shopName"></span></h2>
+				      <p><i class="icon ion-location"></i> <span ng-bind="::c.sit"></span></p>
+				    </div>
+				    <div class="col-33">
+				    	<p class="price">￥<span ng-bind="::c.price"></span></p>
+				    </div>
+				</header>
+			   <footer>
+			   	 	<h3 ><a  href="#/tab/pContent/{{c.pid}}" ng-bind="::c.name"></a></h3>
+				   	<h3><img ng-src='{{::imgUrl+c.qrcodeIMG}}'/></h3>
+						<p >卡密：<span ng-bind="::c.couponCode"></span>（<span class="text_red" ng-bind="::c.invalidName"></span>）</p>
+				   		<p><span ng-bind="::c.vct"></span> 至 <span ng-bind="::c.vet"></span></p>
+			   </footer>
+			</div>
+			<div ng-if="!status" class="warm">
+				<img src="img/empty.png">
+				<p>没有卡券</p>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

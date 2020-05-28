@@ -1,0 +1,55 @@
+ <ion-view view-title="产品详情">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class="" >
+        	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+			<div class="xubox_max productcontentpage"ng-if="status">
+			<ion-slide-box active-slide="myActiveSlide" ng-if="products.img.length>0" does-continue="true" auto-play="true" slide-interval="3000"  
+						   delegate-handle="slideboximgs">
+
+					<ion-slide ng-repeat="p in products.img">
+					  <div class="box"><div><img ng-src="{{imgUrl+p}}" err-src="img/empty.png" class="other-img"></div></div>
+					</ion-slide>
+				
+			</ion-slide-box>
+				<div  class="bg-write product_content_info row" >
+					<div class="">
+						<h4 ng-bind="products.name"></h4>
+						<p><del class="text-muted">￥<span ng-bind="products.price"></span></del></p>
+						<p><b class="text-uppercase"> <span ng-bind="products.integral"></span> </b>积分</p>
+					</div>
+				</div>
+				<div class="bg-write">
+					<div ng-repeat="i in mycarts.value[products.shop][products.id].sn" class="product_content_sn row">
+						<div class="col-50 "><p><span ng-bind="i.parameter"></span>：<span ng-bind="i.num"></span>件</p></div>
+						
+						<div class="col-50 list-inline text-center clear_color">
+							<i class="button button-icon icon ion-ios-minus-outline" ng-click="fjisuan(i,-1)"></i>
+							<span class="button button-clear text_black text-center" ng-bind="i.localNum"></span>
+							<i class="button button-icon icon ion-ios-plus-outline"ng-click="fjisuan(i,1)"></i>
+
+						</div>
+					</div>
+				</div>
+				<dl class="product_content_content bg-write" >
+					<dt>产品详情</dt>
+					<dd data-ng-bind-html="products.content"></dd>
+				</dl>
+			</div>
+			<div ng-if="!status" class="warm">
+				<img src="img/empty.png">
+				<p>该产品已下架</p>
+			</div>
+        </ion-content>
+    	<ion-footer-bar class="pContent"  ng-if="status" >
+			<h1 class="title"></h1>
+    		<div class="buttons"><!--ng-if="products.main_classfy=='2'"-->
+    			<button class="button button-energized"  ng-click="tiaozhuan('addcart')">加入购物车</button>
+			    <button class="button button-assertive"  ng-click="tiaozhuan('buy')">立即购买</button>
+			</div>
+    	</ion-footer-bar>
+      </ion-view>

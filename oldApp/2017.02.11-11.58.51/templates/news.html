@@ -1,0 +1,24 @@
+ <ion-view view-title="新闻中心">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+	<ion-content>
+		
+			<nav class="classfy row text-center bg-write">
+		      <a ng-repeat="one in newsclassfy" class="col" ng-class="{true: 'active', false: ''}[one.id == classfy]" ng-bind="one.classname" ng-click="change(one.id)"></a>
+		  	</nav>
+			<ion-refresher
+			pulling-text="下拉刷新..."
+			on-refresh="doRefresh()">
+			</ion-refresher>
+			<div class="list" ng-if="status">
+			    	<a ng-bind="i.name" ng-repeat="i in items" class="item" href="#/tab/newsContent/{{i.id}}"></a>
+			</div>
+			<div ng-if="!status" class="warm">
+				<img src="img/empty.png">
+				<p>该分类暂无数据</p>
+			</div>
+		
+	     <ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>  
+	</ion-content>
+</ion-view>

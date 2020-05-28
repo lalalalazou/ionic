@@ -1,0 +1,59 @@
+ <ion-view view-title="卡券提货">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class="getGoods">
+        	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+        	<div ng-if="addessesstatus" class="list bg-write addessesstatus row" ng-click="::selectsit()">
+				<div class="col col-80">
+					<p><span ng-bind="::addesses.name"></span><br/><span ng-bind="::addesses.tel"></span></p>
+					<p>
+						<span class="bg-info" ng-bind="::addesses.typename"></span>
+						<span ng-bind="::addesses.provincename+addesses.cityname+addesses.areaname+addesses.address"></span>
+					</p>
+				</div>
+				<div class="col col-20 text-center col-center row-center">
+					<i class="icon ion-chevron-right"></i>
+				</div>
+			</div>
+	<div ng-if="!addessesstatus" class="list bg-write addessesstatus row" ng-click="::selectsit()">
+		<div class="col col-80">
+			<p>姓名电话等</p>
+			<p>请完善收货地址信息...</p>
+		</div>
+		<div class="col col-20 text-center col-center row-center">
+			<i class="icon ion-chevron-right"></i>
+		</div>
+	</div>
+				<div class="list">		
+					<a class="item item-icon-left"  href="#/tab/pContent/{{products.id}}">
+					    <i class="icon ion-ios-pricetags-outline"></i>
+					    <span ng-bind="::products.name"></span>
+					    <span class="item-note">
+					      <del class="text-muted">￥<span ng-bind="::products.price"></span></del>
+					    </span>
+					</a>
+				</div>
+				<div class="list">	
+					  <div class="item item-divider">
+					      	请勾选
+					      	 <span class="item-note ion-ios-arrow-down">
+						    </span>
+					  </div>
+			        <ion-radio ng-repeat="item in productssn"
+			                   ng-value="::item.id"
+			                   ng-model="data.clientSide">
+			         {{::item.parameter }}<span class="text_red">1</span>件<!--/共<span ng-bind="item.num"></span>件-->
+			        </ion-radio>
+			   </div>
+        </ion-content>
+    	<ion-footer-bar class="pContent">
+			<h1 class="title"></h1>
+    		<div class="buttons">
+			    <button class="button button-assertive"  ng-click="::tijiao()">提交订单</button>
+			</div>
+    	</ion-footer-bar>
+      </ion-view>

@@ -1,0 +1,21 @@
+ <ion-view view-title="新闻内容">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+	<ion-content class="">
+		<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+	<div class="newsContent  bg-write padding">
+		<nav>
+			<h2 ng-bind="info.name"></h2>
+			<p><span ng-bind="info.c_time"></span> <span ng-bind="info.classname"></p>
+		</nav>
+		<div class="newsContent_body" ng-bind-html="info.content">
+		</div>
+	
+	</div>
+		
+	</ion-content>
+</ion-view>

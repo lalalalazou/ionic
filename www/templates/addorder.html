@@ -1,0 +1,69 @@
+ <ion-view view-title="下单页面">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+    <ion-content class="mycartlist" overflow-scroll="false">
+	<!--<mycartlist></mycartlist>-->
+	<div ng-if="addessesstatus" class="bg-write addessesstatus row" ng-click="selectsit()">
+		<div class="col col-80">
+			<p><span ng-bind="addesses.name"></span><br/><span ng-bind="addesses.tel"></span></p>
+			<p>
+				<span class="bg-info" ng-if="false" ng-bind="addesses.typename"></span>
+				<span ng-bind="addesses.provincename+addesses.cityname+addesses.areaname+addesses.address"></span>
+			</p>
+		</div>
+		<div class="col col-20 text-center col-center row-center">
+			<i class="icon ion-chevron-right"></i>
+		</div>
+	</div>
+	<div ng-if="!addessesstatus" class="bg-write addessesstatus row" ng-click="selectsit()">
+		<div class="col col-80">
+			<p>姓名电话等</p>
+			<p>请完善收货地址信息...</p>
+		</div>
+		<div class="col col-20 text-center col-center row-center">
+			<i class="icon ion-chevron-right"></i>
+		</div>
+	</div>
+	<div ng-if="mycarts.totalPrice">
+				<div class="mycartlist_content modal-top-1" ng-repeat='mycart in mycarts.value' >
+					<div ng-repeat='c in mycart'  ng-if="c.localNum" class="list ">
+						<!--<div class="item" ng-if="$first" ng-bind="c.shopname"></div>-->
+						<a class="item item-avatar" href="#/tab/pContent/{{c.id}}">
+					      <img ng-if="c.cover_img" ng-src='{{imgUrl+c.cover_img}}' err-src="img/empty.png"/>
+					      <h2 ng-bind="c.shopname+':'+c.name"></h2>
+					      <p>积分：<b class="thisprice" ng-bind="c.integral"></b>  <span class="item-note"><del ng-bind="'￥'+c.price"></del></p>
+					     
+					   </a>
+						<ion-list  class="">
+							<div class="posrelative " ng-repeat="i in c.sn" ng-if="i.localNum">
+								
+				            <!--<ion-checkbox class="checkbox-dark item-divider" ng-change="doCheckRefresh(i)"  ng-checked="i.checked" ng-model="i.checked"></ion-checkbox> --> 
+				            <div class="item item-divider"> 	{{i.parameter}} 剩{{i.num}} 件 </div>
+				            <div class="btnCart" >
+				               	<span class="reckon button button-icon icon ion-ios-minus-outline" ng-click="fjisuan(c.shop,c.id,i,-1)"></span>
+								<span class="button button-clear text_black text-center " ng-bind="i.localNum"></span>
+								<span class="reckon button button-icon icon ion-ios-plus-outline" ng-click="fjisuan(c.shop,c.id,i,1)"></span>
+				            </div>
+							</div>
+				        </ion-list>
+					</div>
+					 
+				</div>				
+			</div>
+			<div ng-hide="mycarts.totalPrice" class="warm">
+				<img src="img/empty.png">
+				<p>购物车里没有东西</p>
+			</div>
+        </ion-content>
+        <ion-footer-bar align-title="left" class="row ">
+			
+				<div class="col col-30 col-center row-center" id="selectallc">
+				
+				</div>
+				<div class="col col-40 col-center row-center text-center text_gray">合计<b class="text_red totapprice" ng-bind="mycarts.checkTotalPrice"></b></div>
+				<div class="col col-30 col-center row-center text-center btn_tijiao">
+					<span ng-click="tijiao()" class="btn btn-success">提交订单(<b class="thiscount" ng-bind="mycarts.checkTotalNum"></b>)</span>
+				</div>
+		</ion-footer-bar>
+      </ion-view>

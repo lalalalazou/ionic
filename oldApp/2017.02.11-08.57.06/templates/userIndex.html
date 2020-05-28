@@ -1,0 +1,77 @@
+ <ion-view view-title="个人中心" hide-nav-bar=true>
+   <ion-header-bar class="bar  bar-header item-input-inset nav_red">
+ <div class="col col-center row-center col-20 text-center">
+					<h3>个人中心</h3>
+				</div>
+</ion-header-bar>
+	<ion-content>
+		<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+			<div class="userindex_info">
+				<header>
+					<p><img src="img/error_user.png" ></p>
+					<p>编号：<span ng-bind="userInfo.code"></span>【<a href="#/tab/receivelist">收货地址</a>】</p>
+				</header>
+				<div class="order list">
+					<div class="row">
+						<li class="col col-25"><a href="#/tab/orderlist/1">待付款</a><i ng-if="userInfo.countOrderStatus1>0">{{userInfo.countOrderStatus1}}</i></li>
+						<li class="col col-25"><a href="#/tab/orderlist/2">待发货</a><i ng-if="userInfo.countOrderStatus2>0">{{userInfo.countOrderStatus2}}</i></li>
+						<li class="col col-25"><a href="#/tab/orderlist/3">待收货</a><i ng-if="userInfo.countOrderStatus3>0">{{userInfo.countOrderStatus3}}</i></li>
+						<li class="col col-25"><a href="#/tab/orderlist/4">已完成</a></li>
+					</div>
+				</div>
+				<div class="user_list_x">
+					<div class="list">
+
+					  <a href="" class="item item-icon-left ">
+					    <i class="icon ion-ios-telephone icon_jf"></i>
+					    	积分余额
+					    	<span class="item-note" ng-bind="jf"></span>
+					  </a>
+					
+					 <a href="#/tab/orderlist/4" class="item item-icon-left  arrow_right">
+					    <i class="icon ion-ios-telephone icon_order"></i>
+					   	 兑换记录
+					    <span class="item-note">立即查看</span>
+					  </a>
+					   <a href="#/tab/couponList" class="item item-icon-left  arrow_right">
+					    <i class="icon ion-ios-telephone icon_coupon"></i>
+					   	 我的卡券
+					    <span class="item-note">立即查看</span>
+					  </a>
+					</div>
+					
+					<div class="list">
+					   <a href="#/tab/charitableUserList" class="item item-icon-left  arrow_right">
+					    <i class="icon ion-ios-telephone icon_charitable"></i>
+					   	 捐赠记录
+					    <span class="item-note">立即查看</span>
+					  </a>
+					   <a href="#/tab/indianaUserList" class="item item-icon-left  arrow_right">
+					    <i class="icon ion-ios-telephone icon_indiana"></i>
+					   	 夺宝记录
+					    <span class="item-note">立即查看</span>
+					  </a>
+					</div>
+					
+					<div class="list">
+					   <a href="tel:4006686660" class="item item-icon-left  arrow_right">
+					    <i class="icon ion-ios-telephone icon_telephone"></i>
+					    	客服中心
+					  </a>
+					
+					  <a href="#/tab/newsContent/2" class="item item-icon-left  arrow_right">
+					    <i class="icon ion-ios-telephone icon_logo"></i>
+					   	 关于兴动
+					    <span class="item-note">我要合作</span>
+					  </a>
+					</div>
+					<div class="list">
+						<a ng-click="unbinkwx()" class="item text-center logout">退出</a>
+					</div>
+				</div>
+			</div>
+	</ion-content>
+</ion-view>

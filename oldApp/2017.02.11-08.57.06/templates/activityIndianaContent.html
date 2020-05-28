@@ -1,0 +1,98 @@
+ <ion-view view-title="夺宝详情">
+ 	
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class="">
+        	<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		<div class="lanren">
+	      	<div ng-if="indiana.status==0" class="ribbon-lanren"><div class="ribbon ribbon_green">未开始</div></div>
+	      	<div ng-if="indiana.status==1" class="ribbon-lanren"><div class="ribbon">进行中</div></div>
+	      	<div ng-if="indiana.status==2 || indiana.status==3" class="ribbon-lanren"><div class="ribbon ribbon_gray">已结束</div></div>
+			<ion-slide-box active-slide="myActiveSlide" ng-if="productimg.length>0" does-continue="true" auto-play="true" slide-interval="3000"  
+							   delegate-handle="slideboximgs">
+				<ion-slide ng-repeat="p in productimg">
+				  <div class="box"><div><img ng-src="{{imgUrl+p}}" err-src="img/empty.png" class="other-img"></div></div>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+		
+			<div class="list " ng-if="indiana.status==2 || indiana.status==3" >
+				  <div class="item item-icon-left item-button-right assertive-bg light">
+    <b><i class="icon ion-trophy"></i> 幸运号码：<span ng-bind="indiana.winner_code"></span></b>
+    <a href="#/tab/indianaUserList" class="button button-positive icon-right">
+      查看我的
+    </a>
+  </div>
+		      
+		      	<div class="item">
+		      		<p>恭喜会员<big ng-bind="username" class="text_red"></big>夺得宝物 
+		      			<small class="item-note ion-ios-clock-outline"> <small ng-bind="indiana.win_time"></small></small>
+		      	</div>
+			</div>
+		<div  class="list" >
+			<div class="item">
+				<p class="text-uppercase">
+					<b>
+			      	<small ng-if="indiana.status==0" class="tag tag_green">未开始</small>
+			      	<small ng-if="indiana.status==1" class="tag">进行中</small>
+			      	<small ng-if="indiana.status==2 || indiana.status==3" class="tag tag_gray">已结束</small>
+			      	 <span ng-bind="products.name">已结束</span>
+					</b>
+					<!--<del class="item-note">￥<span ng-bind="products.price"></span></del>-->
+				</p>
+				<p>夺宝积分：<big class="text_red" ng-bind="indiana.price"></big>积分
+					<del class="item-note"><span ng-bind="products.integral"></span> 积分</del>
+				</p>
+			</div>
+			<div class="item">
+				<p class="row">
+					<span class="col-50">第<span ng-bind="indiana.code"></span>期</span>
+					<span class="col-50 text-right"><span ng-bind="indiana.c_time"></span></span>
+				</p>
+	      		<div class="listprogress">
+	      			<progress ng-class="{0: 'progress-balanced', 1: 'progress-assertive', 2: 'progress-dark'}[indiana.status]" value="{{indiana.number_now}}" max="{{indiana.number_limit}}"><ie style="width:{{indiana.number_now/indiana.number_limit   | number: 2}}%;"></ie></progress>
+	      			<div class="progress_text"><span ng-bind="(indiana.number_now/indiana.number_limit)*100  | number: 2"></span>%</div>
+	      		</div>
+				<p class="row">
+					<span class="col-50 text-left">活动名额：<big class="text_red" ng-bind="indiana.number_limit "></big>人次</span>
+					<span class="col-50 text-right" ng-if="indiana.status<2">剩余名额：<big class="text_red" ng-bind="indiana.number_limit-indiana.number_now"></big>人次</span>
+					<span class="col-50 text-right" ng-if="indiana.status==2 || indiana.status==3">本次参与：<big class="text_red" ng-bind="indiana.number_now"></big>人次</span>
+				</p>
+			</div>
+			<div class="item">
+				您的积分余额<span class="item-note"><big ng-bind="jf" class="text_red"></big> 积分</span>
+			</div>
+		</div>
+		<div class="list">
+			<div class="item item-body">
+				<h2><b><i class="icon ion-navicon"></i> 商品详情</b></h2>
+				<p data-ng-bind-html="products.content"></p>
+			</div>
+		</div>
+		  <div ng-if="!status">
+		     <div class="warm">
+				<img src="img/empty.png">
+				<p>参数错误，请从正确入口进入！</p>
+			</div>
+		  </div>
+       </ion-content>
+    <ion-footer-bar  ng-show="indiana.status==1" class=" bar-footer" ng-class="{true: 'bar-assertive', false: 'bar-stable'}[showpay == true]">
+			<h1 ng-click="togglepayButton()" class="title" ng-bind="{true: '立即夺宝', false: '取消夺宝'}[showpay == true]"></h1>
+			
+    	<div class="list indiana_buy_button" ng-if="!showpay" >
+    		<div class="item row row-center indiana_buy_button_top">
+    			<div class="col-33 col-center">合计：<span class="text_red" ng-bind="buy.num*indiana.price"></span></div>
+    			<div class="col-40 col-center">
+    				<i class="button button-icon icon ion-ios-minus-outline" ng-click="count(buy,-1)" ></i>
+    				<span ng-model="buy.num" ng-bind="buy.num" class="button button-clear"></span>
+    				<i class="button button-icon icon ion-ios-plus-outline" ng-click="count(buy,1)" ></i>
+    			</div>
+    			<div class="col text-center"><button ng-click="pay(buy)" class="button button-large button-assertive">立即夺宝</button></div>
+    		</div>
+    	</div>
+	</ion-footer-bar>
+</ion-view>

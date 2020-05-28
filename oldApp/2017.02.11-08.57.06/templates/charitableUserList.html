@@ -1,0 +1,33 @@
+ <ion-view view-title="捐赠记录">
+	<ion-nav-buttons side="left">
+		<a class="button button-clear icon ion-ios-arrow-back" href="javascript:history.go('-1');"></a>
+	</ion-nav-buttons>
+        <ion-content class="">
+    <ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		  <div ng-if="status">
+		  	<div class="item item-divider">感谢您累计捐赠的<span ng-bind="::charitableUsersumPrice"></span>个积分，给他人带来帮助。</div>
+		  
+		  	<ion-item 
+		  		class="item item-avatar" 
+		  		href="#/tab/activityCharitableContent/{{u.activity_charitable_id}}" 
+		  		collection-repeat="u in users"
+		  		collection-item-render-buffer="3"
+      			collection-item-width="'100%'">
+		      <img ng-src="{{imgUrl+u.listImg}}" err-src="img/empty.png"/>
+		      <h2 ><span ng-bind="u.name"></span><span class="item-note"><i class="icon ion-ios-heart-outline text_red"></i> 我再捐赠</span></h2>
+		      <p><small><span class="ion-clock" ng-bind="u.c_time"></span> 捐助了<big class="text_red" ng-bind="u.charitable_price"></big>积分</small></p>
+		     
+		   </ion-item>
+		  </div>
+		  <div ng-if="!status">
+		     <div class="warm">
+				<img src="img/empty.png">
+				<p>还没有爱心行动，马上献出第一份爱心吧！</p>
+			</div>
+		  </div>
+		<!--<ion-infinite-scroll ng-if="!domore"   on-infinite="loadMore()" distance="10%" ></ion-infinite-scroll>  -->
+        </ion-content>
+      </ion-view>

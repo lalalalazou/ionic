@@ -1,0 +1,49 @@
+  <ion-view view-title="首页" hide-nav-bar=true>
+  <ion-header-bar class="bar  bar-header item-input-inset nav_red">
+ <headmenu class="row"></headmenu>
+</ion-header-bar>
+    <ion-content class="">
+    <ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()">
+		</ion-refresher>
+		<div class="show indexpage" id="slidshow" animation="slide-left-right-ios7">
+		 <ion-slide-box active-slide="myActiveSlide" ng-if="banners.length>1" does-continue="true" auto-play="true" slide-interval="3000"  
+						   delegate-handle="slideimgs">
+					<ion-slide ng-if="::p.banner_img_url" ng-repeat="p in banners">
+					  <img ng-src="{{::imgUrl+p.banner_img_url}}" class="other-img" err-src="img/empty.png">
+					</ion-slide>
+			</ion-slide-box>
+		</div>
+		<div class="icon_index_active">
+			<div class="row icon_index_active_top" id="icon_index_active_top">
+				<div class="col"><span></span>余<b ng-bind="jf"></b>分</div>
+				<div class="col"><a href="#/tab/orderlist/4"><span></span>兑换记录</a></div>
+				<div class="col"><a href="#/tab/newsContent/1"><span></span>积分规则</a></div>
+			</div>
+			<div class="row icon_index_active_bot" id="icon_index_active_bot">
+				<a class="col" href="#/tab/activityIndianalist"><span></span></a>
+				<a href="#/tab/activityIndianalist" class="col text-left col-center"><p>积分夺宝</p></a>
+				<a class="col" href="#/tab/activityCharitablelist"><span></span></a>
+				<a class="col text-left col-center" href="#/tab/activityCharitablelist"><p>爱心捐助</p></a>
+			</div>
+		</div>
+		<div class="index_product_list">
+			<div class='index_list' ng-repeat='c in products' ng-if="::c.shop.length>0" >
+				<nav>
+					<a href='#/tab/classfy' ng-bind="::c.classname"></a>
+				</nav>
+				<a class="claafy_banner" ng-if='::c.banner' href='#/tab/{{::c.banner_url }}'>
+					<img class='img-responsive' ng-src='{{::imgUrl+c.banner }}'/>
+				</a>
+				<div class='row text-center border-top'>
+					<div class='col-33' ng-repeat='i in c.shop'>
+						<a ng-if='::i.cover_img'  href="#/tab/pContent/{{ i.id }}">
+							<img ng-src='{{::imgUrl+i.cover_img }}' err-src="img/empty.png"/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+ </ion-content>
+</ion-view>

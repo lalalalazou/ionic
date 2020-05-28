@@ -1,0 +1,626 @@
+[
+  {
+    "file": "cordova_plugins.js",
+    "hash": "a80e79af79c771116c2d9c6b7344ccff"
+  },
+  {
+    "file": "cordova-js-src/android/nativeapiprovider.js",
+    "hash": "035f17302807fd50b779d529b2fe70e6"
+  },
+  {
+    "file": "cordova-js-src/android/promptbasednativeapi.js",
+    "hash": "f4b029f0e91729c970ff421b8f9bd22e"
+  },
+  {
+    "file": "cordova-js-src/exec.js",
+    "hash": "4d368f4918f938b17fad3f819bdda568"
+  },
+  {
+    "file": "cordova-js-src/platform.js",
+    "hash": "6e1fac8e69e82cb27178bb5a01f1d36c"
+  },
+  {
+    "file": "cordova-js-src/plugin/android/app.js",
+    "hash": "58b79c9693166d44fc65d57979fcdf28"
+  },
+  {
+    "file": "cordova.js",
+    "hash": "a1325468b1b096757f6ee476bd70c4d5"
+  },
+  {
+    "file": "css/style.css",
+    "hash": "936f1915914129b8e2e2ba8576e08176"
+  },
+  {
+    "file": "img/coupon_list_bg.png",
+    "hash": "8b428086b152eca8c639037d9a83afe5"
+  },
+  {
+    "file": "img/empty.png",
+    "hash": "28ef2a0599b5990a926009e48a96ea78"
+  },
+  {
+    "file": "img/error_user.png",
+    "hash": "8359be62e655a8bcf593197dca86e9be"
+  },
+  {
+    "file": "img/icon_index_active_bot.png",
+    "hash": "0c66c90d6acb1f93057f795065dc6fb7"
+  },
+  {
+    "file": "img/icon_index_active_top.png",
+    "hash": "905c44a286f30972cce2ec74593c4dfe"
+  },
+  {
+    "file": "img/news.png",
+    "hash": "1fbd88b1d3ce36389dbf31c281c07b3a"
+  },
+  {
+    "file": "img/qrcodeBg.png",
+    "hash": "84dece79aa831ac2193084a8d120da59"
+  },
+  {
+    "file": "img/tabs_icon.png",
+    "hash": "6305834ebfbc81156baf8b13a54f0c3a"
+  },
+  {
+    "file": "img/uploadimg.jpg",
+    "hash": "963655b4c3382b5c7bc075f514c0f643"
+  },
+  {
+    "file": "img/userindex_icon.png",
+    "hash": "9b5f4da810495735f4914b5dbb1e2d91"
+  },
+  {
+    "file": "index.html",
+    "hash": "e9f793b915db255107ecc82cf369c5b8"
+  },
+  {
+    "file": "js/angular-ios9-uiwebview.patch.js",
+    "hash": "74443286e083ebbacafd6c6143eeb46a"
+  },
+  {
+    "file": "js/app.js",
+    "hash": "0f45dc40fd6fc7d988fe18fa9b6bf6ea"
+  },
+  {
+    "file": "js/app.min.js",
+    "hash": "03b4dc8bceabc1078c65feffbd17eb29"
+  },
+  {
+    "file": "js/controllers.js",
+    "hash": "9286fa6edb0e682c8403f6ba713028b1"
+  },
+  {
+    "file": "js/controllers.min.js",
+    "hash": "604700860d527c29f2480298a60fe2ce"
+  },
+  {
+    "file": "js/services.js",
+    "hash": "a59912eb2274c18faeace3fd52e57865"
+  },
+  {
+    "file": "js/services.min.js",
+    "hash": "46a78f1565ebb89b4d1c6ec66bf4509c"
+  },
+  {
+    "file": "lib/ionic/css/ionic.app.css",
+    "hash": "2316399219d25dde92d393f9dc9602fe"
+  },
+  {
+    "file": "lib/ionic/css/ionic.app.css.map",
+    "hash": "52dc34fda32aa03c8fcef600fc25417c"
+  },
+  {
+    "file": "lib/ionic/css/ionic.css",
+    "hash": "7ae3b1acd57c92de3f0c1caa8a4e7998"
+  },
+  {
+    "file": "lib/ionic/css/ionic.min.css",
+    "hash": "20d29ea12426cffb05c508c88acdb11a"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.eot",
+    "hash": "2c2ae068be3b089e0a5b59abb1831550"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.svg",
+    "hash": "621bd386841f74e0053cb8e67f8a0604"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.ttf",
+    "hash": "24712f6c47821394fba7942fbb52c3b2"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.woff",
+    "hash": "05acfdb568b3df49ad31355b19495d4a"
+  },
+  {
+    "file": "lib/ionic/js/angular-ui/angular-ui-router.js",
+    "hash": "1f7fe3573d463743394e98d8b00eb228"
+  },
+  {
+    "file": "lib/ionic/js/angular-ui/angular-ui-router.min.js",
+    "hash": "83f32131b638a8686a43510fbd645b1b"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular-animate.js",
+    "hash": "b1a0315d4738ba305aca3b00146e232c"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular-animate.min.js",
+    "hash": "fb61c6d539943f24f85f49cad4c187b5"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular-resource.js",
+    "hash": "523cfbb962e367e90da4bf1976b53d7f"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular-resource.min.js",
+    "hash": "8da982bb4bc3275659b4c081f34f9b7c"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular-sanitize.js",
+    "hash": "7b57f04a2b23847203394400eeb2c97d"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular-sanitize.min.js",
+    "hash": "04a7b73d1dc5d573a5b17d70122e8781"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular.js",
+    "hash": "1b3d5bfbeb67c93df0f8ee9de569a206"
+  },
+  {
+    "file": "lib/ionic/js/angular/angular.min.js",
+    "hash": "0744b6e5cd7b7cdad98cefb3d9c141c6"
+  },
+  {
+    "file": "lib/ionic/js/ionic-angular.js",
+    "hash": "50e928675a4a314db9502dd954752815"
+  },
+  {
+    "file": "lib/ionic/js/ionic-angular.min.js",
+    "hash": "6406188080adeb14918f2dc0d6919267"
+  },
+  {
+    "file": "lib/ionic/js/ionic.bundle.js",
+    "hash": "428886467d117ff238213382b7a8a8a7"
+  },
+  {
+    "file": "lib/ionic/js/ionic.bundle.min.js",
+    "hash": "940466e58c5d23511aab97b24ef14702"
+  },
+  {
+    "file": "lib/ionic/js/ionic.js",
+    "hash": "23356dce9ed1b8a47c52141cdf778228"
+  },
+  {
+    "file": "lib/ionic/js/ionic.min.js",
+    "hash": "80bc3ba40c9519471cec72efeb5c6fe1"
+  },
+  {
+    "file": "lib/ionic/scss/_action-sheet.scss",
+    "hash": "d0c6449f31db02323aa6e7f56ef55e67"
+  },
+  {
+    "file": "lib/ionic/scss/_animations.scss",
+    "hash": "5596f74cb1ee03f9faf453ad4ee11807"
+  },
+  {
+    "file": "lib/ionic/scss/_backdrop.scss",
+    "hash": "7ff048e091b39f6615db62ee136ef040"
+  },
+  {
+    "file": "lib/ionic/scss/_badge.scss",
+    "hash": "c7b1b0e3049754fc22b45730e6c560fa"
+  },
+  {
+    "file": "lib/ionic/scss/_bar.scss",
+    "hash": "3a3e2b39cb46db25fafff9d68c3f062e"
+  },
+  {
+    "file": "lib/ionic/scss/_button-bar.scss",
+    "hash": "bf90c5d85e628b451f90b65f9c807f5a"
+  },
+  {
+    "file": "lib/ionic/scss/_button.scss",
+    "hash": "e365f13abd3c547f442fc1ac5385111f"
+  },
+  {
+    "file": "lib/ionic/scss/_checkbox.scss",
+    "hash": "89a0987dd24210f16863d7ba2c7312bd"
+  },
+  {
+    "file": "lib/ionic/scss/_form.scss",
+    "hash": "169f7a6e449aa9e1bed20a1f30887c97"
+  },
+  {
+    "file": "lib/ionic/scss/_grid.scss",
+    "hash": "9a87c565e397bb73b7f467726a63e01c"
+  },
+  {
+    "file": "lib/ionic/scss/_items.scss",
+    "hash": "711c0937e27c2ab5979f44e36ff31ac6"
+  },
+  {
+    "file": "lib/ionic/scss/_list.scss",
+    "hash": "0ab8daf57764aac25bf68aa0b0e6c776"
+  },
+  {
+    "file": "lib/ionic/scss/_loading.scss",
+    "hash": "9f23e266d43a432bbf07a8677d1d1592"
+  },
+  {
+    "file": "lib/ionic/scss/_menu.scss",
+    "hash": "c12d33c8bea78495b2571665e35cb192"
+  },
+  {
+    "file": "lib/ionic/scss/_mixins.scss",
+    "hash": "dfa91bbaa3f54a417ce1567c5b34dc13"
+  },
+  {
+    "file": "lib/ionic/scss/_modal.scss",
+    "hash": "38e8624ef28a495e7a01341915516bd1"
+  },
+  {
+    "file": "lib/ionic/scss/_platform.scss",
+    "hash": "db73214ac171e89a966c24d5320fe096"
+  },
+  {
+    "file": "lib/ionic/scss/_popover.scss",
+    "hash": "924a0474d4e58b3280e7d1ebf1938a55"
+  },
+  {
+    "file": "lib/ionic/scss/_popup.scss",
+    "hash": "988126e645408f1e5a270934520c20ac"
+  },
+  {
+    "file": "lib/ionic/scss/_progress.scss",
+    "hash": "19a19537d8e9483db7bde8a7febd43f6"
+  },
+  {
+    "file": "lib/ionic/scss/_radio.scss",
+    "hash": "9e5544332590f92c25ea065140610b03"
+  },
+  {
+    "file": "lib/ionic/scss/_range.scss",
+    "hash": "ae2eb0fc86bdcef56346885dcb76370f"
+  },
+  {
+    "file": "lib/ionic/scss/_refresher.scss",
+    "hash": "23c7b98a85caf376b414f4ed5a713831"
+  },
+  {
+    "file": "lib/ionic/scss/_reset.scss",
+    "hash": "319f0fb2d58da7fc89222752c5e527a4"
+  },
+  {
+    "file": "lib/ionic/scss/_scaffolding.scss",
+    "hash": "83d10a4997b12f655e847c886ae54dac"
+  },
+  {
+    "file": "lib/ionic/scss/_select.scss",
+    "hash": "7b40e394e01f33ebc89fcfc89f826410"
+  },
+  {
+    "file": "lib/ionic/scss/_slide-box.scss",
+    "hash": "ae10f39144dc0f6b5b24fb6e811e992a"
+  },
+  {
+    "file": "lib/ionic/scss/_slides.scss",
+    "hash": "504700ae567875f003c7fd1571a482e1"
+  },
+  {
+    "file": "lib/ionic/scss/_spinner.scss",
+    "hash": "472ae7eb35a68c22078b1d56b10f35be"
+  },
+  {
+    "file": "lib/ionic/scss/_tabs.scss",
+    "hash": "a8e939c50fd869edf42979129898a84e"
+  },
+  {
+    "file": "lib/ionic/scss/_toggle.scss",
+    "hash": "05e76b843e03e5df07342f8f4b352ba3"
+  },
+  {
+    "file": "lib/ionic/scss/_transitions.scss",
+    "hash": "c060678db2049bbca8833bf769d65dd1"
+  },
+  {
+    "file": "lib/ionic/scss/_type.scss",
+    "hash": "db602af625137bdc4d95b262d77a15c1"
+  },
+  {
+    "file": "lib/ionic/scss/_util.scss",
+    "hash": "c7af3ffdcc728e1c6f44061ed6120c15"
+  },
+  {
+    "file": "lib/ionic/scss/_variables.scss",
+    "hash": "aa0fd7fb8581ecd75a9efaa647b1dc50"
+  },
+  {
+    "file": "lib/ionic/scss/ionic.scss",
+    "hash": "a102a720475b3304d099fc3c94e7f619"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/_ionicons-font.scss",
+    "hash": "9a1734051fa60f52fdbdd74001b0f0e0"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/_ionicons-icons.scss",
+    "hash": "fcdab55027fe7da71f277ee58fad686a"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/_ionicons-variables.scss",
+    "hash": "0af49648c5756e4a96eb1eb70f016ee3"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/ionicons.scss",
+    "hash": "37204d759a9eb7bfc074034fd1bf95fb"
+  },
+  {
+    "file": "lib/ionic/version.json",
+    "hash": "421fc5b26f0c248e73d067ca80dbd6e1"
+  },
+  {
+    "file": "manifest.json",
+    "hash": "538cad7e154c1ae87af239acf44aa855"
+  },
+  {
+    "file": "plugins/cordova-hot-code-push-plugin/www/chcp.js",
+    "hash": "0beaa97dfe7d1183b7c4736ad5f2bbb2"
+  },
+  {
+    "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+    "hash": "f9cdb697024144cb79f3bfdd83a31c4c"
+  },
+  {
+    "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
+    "hash": "f94beec0940aca3fc272bc0d440baa63"
+  },
+  {
+    "file": "plugins/cordova-plugin-device/www/device.js",
+    "hash": "c0894e131eef8fdfdad7e5015f46202a"
+  },
+  {
+    "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
+    "hash": "230bc982a8e4dc6387731d7c8b9584ee"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/android/FileSystem.js",
+    "hash": "507bd2d0fe6457be2e6b172f5c62a2f4"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/browser/isChrome.js",
+    "hash": "dcc4900513a46524dcb99baf820d1c14"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
+    "hash": "d2d0f70dcc6a1dc82453f477afadbd5f"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/DirectoryReader.js",
+    "hash": "a427e5a575adb5d834f20471f9acc925"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/Entry.js",
+    "hash": "85af6ce71adcb77d5658cee0bdc6c250"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/File.js",
+    "hash": "24c8cb183c37da18cd6e2ef018497557"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/FileEntry.js",
+    "hash": "4e4a73a5931b83082807b767cc9c9271"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/FileError.js",
+    "hash": "0ce2028ddca12361f3a71371a97eff59"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/FileReader.js",
+    "hash": "99d9f417a83bb7d38076782d67c68671"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/FileSystem.js",
+    "hash": "fb6e0cfda21bda49904a31375ae401ef"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/fileSystemPaths.js",
+    "hash": "4ee8b71ffefe2420f1ffb9f3d6c9d64e"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/fileSystems-roots.js",
+    "hash": "5b05791519d436e3658c54102b16f618"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/fileSystems.js",
+    "hash": "034f790c68814853100645cbd46d3321"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/FileUploadOptions.js",
+    "hash": "c1c5aa68ed17d85b387e0d9c9a594926"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/FileUploadResult.js",
+    "hash": "d178b0492732c61c7bf3755c0a97d4d2"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/FileWriter.js",
+    "hash": "bf623be93c7d7befc44cfdb36c495d8c"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/Flags.js",
+    "hash": "af9083bf095ff8260ee0879a8f861419"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/LocalFileSystem.js",
+    "hash": "d99ae0b616418bc9ed4fdf7b16c124e8"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/Metadata.js",
+    "hash": "173518914823e68f9e7ab9154ae16e0e"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/ProgressEvent.js",
+    "hash": "5707dfdde0a0fd65c0221c85d5fc8934"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/requestFileSystem.js",
+    "hash": "97006e9ca931196e97a65aa65d12c358"
+  },
+  {
+    "file": "plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js",
+    "hash": "c5bc19fca0f964a61e71880276f5a8f1"
+  },
+  {
+    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+    "hash": "22ce9eb016efc7210bf0ab23a2f8f791"
+  },
+  {
+    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+    "hash": "94c066d78d1daff6395b653635d1a793"
+  },
+  {
+    "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+    "hash": "09795adf13b14107984c599d8a65dc13"
+  },
+  {
+    "file": "plugins/cordova-plugin-network-information/www/network.js",
+    "hash": "dd64e282f2eeadd7e56e8d862e19cd00"
+  },
+  {
+    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+    "hash": "394213a4b732f77f1c911dea25b71020"
+  },
+  {
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "hash": "64abbc924a8aba989efd2651993e6b8e"
+  },
+  {
+    "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+    "hash": "277fda8b4136987c717c3b5decdf7268"
+  },
+  {
+    "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+    "hash": "3abd14d206f625755e66d648db22af48"
+  },
+  {
+    "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+    "hash": "5e40a93868c8ae94bebb74ffb56deb1a"
+  },
+  {
+    "file": "service-worker.js",
+    "hash": "7de431000cd0f19fc38619fdd7314f81"
+  },
+  {
+    "file": "templates/activityCharitableContent.html",
+    "hash": "a53d5f365df7409973d6682c69e39c8d"
+  },
+  {
+    "file": "templates/activityCharitablelist.html",
+    "hash": "25ea7be753baf82289c2f00e90bfdf8f"
+  },
+  {
+    "file": "templates/activityIndex.html",
+    "hash": "3037a759d138a787107e8481569f6cb3"
+  },
+  {
+    "file": "templates/activityIndianaContent.html",
+    "hash": "881fb9dbd719fbe32ec70c3515db51cf"
+  },
+  {
+    "file": "templates/activityIndianalist.html",
+    "hash": "e2ccb1de085514e6307adb3c559bb98e"
+  },
+  {
+    "file": "templates/addorder.html",
+    "hash": "d23b7efec9bf22ddf6fc4b1cbb992b11"
+  },
+  {
+    "file": "templates/addreceiver.html",
+    "hash": "4d62679bfc1d3d9656ce1b09fd07c19d"
+  },
+  {
+    "file": "templates/charitableUserList.html",
+    "hash": "363110ba991c32e1e01ddf19f66b46bc"
+  },
+  {
+    "file": "templates/classfy.html",
+    "hash": "822cc080ac806378da6172de1ecb1645"
+  },
+  {
+    "file": "templates/couponCode.html",
+    "hash": "5478519384423ab74b8a74d6578dcb70"
+  },
+  {
+    "file": "templates/couponList.html",
+    "hash": "b16e8308401df0a5c687f7f26bc1ddd1"
+  },
+  {
+    "file": "templates/editreceiver.html",
+    "hash": "0d7ad87780f4df4dc5c207f5893fb656"
+  },
+  {
+    "file": "templates/getGoods.html",
+    "hash": "3d3c285a7510e74773b079d1eb573899"
+  },
+  {
+    "file": "templates/home.html",
+    "hash": "65cc84620b7aad05499925b5111803e8"
+  },
+  {
+    "file": "templates/indianaUserList.html",
+    "hash": "374f9a4e64e58cc9a5adee515dd5c9a7"
+  },
+  {
+    "file": "templates/login.html",
+    "hash": "2184fd7564923ac0ae061034b9865d3a"
+  },
+  {
+    "file": "templates/mycart.html",
+    "hash": "e3eec73a849e09509ce6cd6e584cc3e2"
+  },
+  {
+    "file": "templates/news.html",
+    "hash": "f9e4fb094a9b3ea3ac3566659e6f4966"
+  },
+  {
+    "file": "templates/newsContent.html",
+    "hash": "dc73e950ccb44ac2fc13dbe80a2b00b3"
+  },
+  {
+    "file": "templates/orderContent.html",
+    "hash": "32784c14f84a8719660343b4d94709d3"
+  },
+  {
+    "file": "templates/orderlist.html",
+    "hash": "ed8f9b741e2d7aef0e22b02ad3a94af8"
+  },
+  {
+    "file": "templates/pay.html",
+    "hash": "e69b8d483696fad03731a5b5bcea658e"
+  },
+  {
+    "file": "templates/pContent.html",
+    "hash": "61153503d8865394ac5b86d0e2212131"
+  },
+  {
+    "file": "templates/productList.html",
+    "hash": "04f0e5c76a1f05c7e21f3e1458d06bb0"
+  },
+  {
+    "file": "templates/receivelist.html",
+    "hash": "4e0f235ae7cec4f2edf414f282f440c9"
+  },
+  {
+    "file": "templates/tabs.html",
+    "hash": "694c6810e3ad7f7057f15f8ebe9c8c57"
+  },
+  {
+    "file": "templates/userIndex.html",
+    "hash": "1945ae0f86d4698c3e0b107ca2c10187"
+  }
+]
